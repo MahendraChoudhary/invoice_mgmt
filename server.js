@@ -34,10 +34,16 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-mongoose.connect("mongodb://localhost:27017/invoiceDB", {
+// mongoose.connect("mongodb://localhost:27017/invoiceDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+mongoose.connect("mongodb+srv://mahendrajat072003:3JQeRbKj2DS4k5oI@cluster0.nctxf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+}, console.log("mongodb connected"));
+
 
 // Import Routes
 const productRoutes = require("./routes/productRoutes");
