@@ -47,10 +47,10 @@ app.use("/api/products", productRoutes);
 app.use("/api/invoice", invoiceRoutes);
 
 // 🟢 Serve React Build
-app.use(express.static(path.join(__dirname, "../frontend/build"))); // Ensure correct path
+app.use(express.static(path.join(__dirname, "./build"))); // Ensure correct path
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+  res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
